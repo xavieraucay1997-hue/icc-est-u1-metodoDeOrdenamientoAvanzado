@@ -52,34 +52,4 @@ public class Sorts {
         }
     }
 
-    public void quickSort(int[] array, int inicio, int fin) {
-
-        if (inicio < fin) {
-
-            int pivote = dividir(array, inicio, fin);
-            quickSort(array, inicio, pivote - 1);
-            quickSort(array, pivote + 1, fin);
-        }
-    }
-    public int dividir(int[] array, int inicio, int fin) {
-
-        int pivote = array[fin];
-        int i = inicio - 1;
-        for (int j = inicio; j < fin; j++) {
-            if (array[j] < pivote) {
-                i++;
-
-                int aux = array[i];
-                array[i] = array[j];
-                array[j] = aux;
-            }
-        }
-
-        int aux = array[i + 1];
-        array[i + 1] = array[fin];
-        array[fin] = aux;
-
-        return i + 1;
-    }
 }
-
